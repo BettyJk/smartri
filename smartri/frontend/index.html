@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartRI Web</title>
+  <style>
+    body { font-family: Arial; margin: 2em; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    .Urgent { background: #ff4d4d; color: white; }
+    .Normal { background: #ffe066; color: black; }
+    .Safe { background: #d4edda; color: black; }
+    #tableDiv { margin-top: 2em; }
+  </style>
+</head>
+<body>
+  <h1>SmartRI - Audit Inventaire Priorisé</h1>
+  <input type="file" id="fileInput" accept=".xlsx" />
+  <button onclick="uploadFile()">Analyser</button>
+  <div id="tableDiv"></div>
+  <script>
+    async function uploadFile() {
+      const fileInput = document.getElementById('fileInput');
+      if (!fileInput.files.length) return alert('Sélectionnez un fichier Excel');
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      const res = await fetch('http://localhost:8000/upload', { method: 'POST', body: formData });
+      const data = await res.json();
+      renderTable(data);
+    }
+    function renderTable(data) {
+      if (!data.length) return;
+      let html = '<table><tr>';
+      Object.keys(data[0]).forEach(k => html += `<th>${k}</th>`);
+      html += '</tr>';
+      data.forEach(row => {
+        html += `<tr class="${row.risk_level || ''}">`;
+        Object.values(row).forEach(v => html += `<td>${v ?? ''}</td>`);
+        html += '</tr>';
+      });
+      html += '</table>';
+      document.getElementById('tableDiv').innerHTML = html;
+    }
+  </script>
+</body>
+</html>
