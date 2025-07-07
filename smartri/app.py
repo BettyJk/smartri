@@ -5,13 +5,16 @@ from feature_engineering import add_features
 from datetime import datetime
 
 st.set_page_config(page_title="SmartRI: Inventory Audit Prioritization", layout="wide")
+st.image("https://upload.wikimedia.org/wikipedia/commons/6/6c/Stellantis_logo.png", width=200)
+st.markdown("### Plateforme d’audit inventaire priorisé pour Stellantis")
 st.title("SmartRI: AI-Powered Prioritized Inventory Audit System")
 
 # File uploader for user data
 uploaded_file = st.file_uploader("Téléchargez votre fichier Excel d'inventaire", type=["xlsx"])
 if uploaded_file is not None:
-    df = load_inventory_data(uploaded_file)
-    df = add_features(df)
+    with st.spinner('Analyse en cours...'):
+        df = load_inventory_data(uploaded_file)
+        df = add_features(df)
 else:
     st.info("Veuillez télécharger un fichier Excel pour commencer.")
     st.stop()
