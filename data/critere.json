@@ -1,0 +1,83 @@
+[
+  {
+    "Critère": "Type d'emballage",
+    "Coefficient": 0.7,
+    "Spécifications": [
+      { "Spécification": "GV", "Pondération": 3, "Contribution max": 2.1 },
+      { "Spécification": "PC", "Pondération": 5, "Contribution max": 3.5 }
+    ]
+  },
+  {
+    "Critère": "Flux Pièce",
+    "Coefficient": 0.5,
+    "Spécifications": [
+      { "Spécification": "Local", "Pondération": 2, "Contribution max": 1 },
+      { "Spécification": "Ibérique", "Pondération": 3, "Contribution max": 1.5 },
+      { "Spécification": "Europe Ouest &Central", "Pondération": 3, "Contribution max": 1.5 },
+      { "Spécification": "PECO", "Pondération": 4, "Contribution max": 2 },
+      { "Spécification": "Overseas", "Pondération": 5, "Contribution max": 2.5 }
+    ]
+  },
+  {
+    "Critère": "Date du dernier RI",
+    "Coefficient": 1,
+    "Spécifications": [
+      { "Spécification": "1 à 36 Jours", "Pondération": 1, "Contribution max": 1 },
+      { "Spécification": "37 à 72 Jours", "Pondération": 2, "Contribution max": 2 },
+      { "Spécification": "73 à 108 Jours", "Pondération": 3, "Contribution max": 3 },
+      { "Spécification": "109 à 144 Jours", "Pondération": 4, "Contribution max": 4 },
+      { "Spécification": "145 à 180 Jours", "Pondération": 5, "Contribution max": 5 }
+    ]
+  },
+  {
+    "Critère": "Prix Pièce",
+    "Coefficient": 0.6,
+    "Spécifications": [
+      { "Spécification": "< 1", "Pondération": 1, "Contribution max": 0.6 },
+      { "Spécification": "< 10", "Pondération": 2, "Contribution max": 1.2 },
+      { "Spécification": "< 100", "Pondération": 3, "Contribution max": 1.8 },
+      { "Spécification": "<500", "Pondération": 4, "Contribution max": 2.4 },
+      { "Spécification": ">=500", "Pondération": 5, "Contribution max": 3 }
+    ]
+  },
+  {
+    "Critère": "ECV/COR",
+    "Coefficient": 0.9,
+    "Spécifications": [
+      { "Spécification": "0 à 1", "Pondération": 2, "Contribution max": 1.8 },
+      { "Spécification": "2 à 3", "Pondération": 3, "Contribution max": 2.7 },
+      { "Spécification": "4 à 5", "Pondération": 4, "Contribution max": 3.6 },
+      { "Spécification": "> 5", "Pondération": 5, "Contribution max": 4.5 }
+    ]
+  },
+  {
+    "Critère": "UC",
+    "Coefficient": 0.5,
+    "Spécifications": [
+      { "Spécification": "1 à 50", "Pondération": 1, "Contribution max": 0.5 },
+      { "Spécification": "51 à 200", "Pondération": 2, "Contribution max": 1 },
+      { "Spécification": "200 à 500", "Pondération": 3, "Contribution max": 1.5 },
+      { "Spécification": "501 à 4000", "Pondération": 4, "Contribution max": 2 },
+      { "Spécification": "> 4000", "Pondération": 5, "Contribution max": 2.5 }
+    ]
+  },
+  {
+    "Critère": "Rebut",
+    "Coefficient": 0.8,
+    "Spécifications": [
+      { "Spécification": "<516", "Pondération": 1, "Contribution max": 0.8 },
+      { "Spécification": ">=516 & <688", "Pondération": 2, "Contribution max": 1.6 },
+      { "Spécification": ">=688 & <860", "Pondération": 3, "Contribution max": 2.4 },
+      { "Spécification": ">=860 & <1072", "Pondération": 4, "Contribution max": 3.2 },
+      { "Spécification": ">1072", "Pondération": 5, "Contribution max": 4 }
+    ]
+  },
+  {
+    "Critère": "Pièces en suspicion de vol",
+    "Coefficient": 0.8,
+    "Spécifications": [
+      { "Spécification": "Non", "Pondération": 0, "Contribution max": 0 },
+      { "Spécification": "Oui", "Pondération": 5, "Contribution max": 4 }
+    ]
+  }
+]
