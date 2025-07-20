@@ -60,7 +60,7 @@ with open("data/critere.json", encoding="utf-8") as f:
     criteria = json.load(f)
 
 # Charger la base de données des produits scorés
-with open("data/planning_inventaire_integral_clean.json", encoding="utf-8") as f:
+with open("data/Planning_Inventaire_Integral_clean.json", encoding="utf-8") as f:
     reference_data = json.load(f)
 
 # Indexer le JSON par produit
